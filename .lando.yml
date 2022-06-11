@@ -1,0 +1,7 @@
+name: myzenteam
+recipe: laravel
+config:
+  webroot: public
+  via: nginx
+  database: mariadb
+  cache: none
