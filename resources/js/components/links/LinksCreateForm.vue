@@ -60,15 +60,15 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
-import useLinks from '../../composables/links';
+import { ref, reactive } from "vue";
+import useLinks from "../../composables/links";
 const { errors, storeLink } = useLinks();
 
 const submit_button = ref(false);
 
 const form = reactive({
-    title: '',
-    link: '',
+    title: "",
+    link: "",
     open_in_new_tab: false
 });
 
@@ -80,5 +80,5 @@ const saveLink = async () => {
     formData.append("open_in_new_tab", form.open_in_new_tab ? 1 : 0);
     await storeLink(formData);
     submit_button.value = false;
-}
+};
 </script>

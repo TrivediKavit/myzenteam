@@ -95,8 +95,8 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue';
-import useHtmlSnippets from '../../composables/html-snippets';
+import { ref, reactive, onMounted } from "vue";
+import useHtmlSnippets from "../../composables/html-snippets";
 const { errors, html_snippet, updateHtmlSnippet, getHtmlSnippet, destroyHtmlSnippet } = useHtmlSnippets();
 
 const loading = ref(true);
@@ -112,9 +112,9 @@ const props = defineProps({
 });
 
 const form = reactive({
-    title: '',
-    description: '',
-    snippet: ''
+    title: "",
+    description: "",
+    snippet: ""
 });
 
 onMounted(async () => {
@@ -138,14 +138,14 @@ const saveHtmlSnippet = async () => {
         "snippet": form.snippet
     });
     submit_button.value = false;
-}
+};
 
 const deleteHtmlSnippet = async () => {
-    if (!window.confirm('Are you sure?')) {
-        return
+    if (!window.confirm("Are you sure?")) {
+        return;
     }
     delete_button.value = true;
     await destroyHtmlSnippet(props.id);
     delete_button.value = false;
-}
+};
 </script>

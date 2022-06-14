@@ -59,9 +59,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import LinksTableRow from './LinksTableRow.vue';
-import useLinks from '../../composables/links.js';
+import { ref, onMounted } from "vue";
+import LinksTableRow from "./LinksTableRow.vue";
+import useLinks from "../../composables/links.js";
 const { links, getLinks } = useLinks();
 
 const loading = ref(true);
@@ -72,7 +72,7 @@ defineProps({
         type: Boolean,
         default: false
     }
-})
+});
 
 onMounted(async () => {
     await getLinks();

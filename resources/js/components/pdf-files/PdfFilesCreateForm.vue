@@ -55,15 +55,15 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
-import usePdfFiles from '../../composables/pdf-files';
+import { ref, reactive } from "vue";
+import usePdfFiles from "../../composables/pdf-files";
 const { errors, storePdfFile } = usePdfFiles();
 
 const file = ref(null);
 const submit_button = ref(false);
 
 const form = reactive({
-    title: '',
+    title: "",
     file: null
 });
 
@@ -78,5 +78,5 @@ const savePdfFile = async () => {
     formData.append("file", form.file);
     await storePdfFile(formData);
     submit_button.value = false;
-}
+};
 </script>

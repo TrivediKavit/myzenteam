@@ -66,16 +66,16 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
-import useHtmlSnippets from '../../composables/html-snippets';
+import { ref, reactive } from "vue";
+import useHtmlSnippets from "../../composables/html-snippets";
 const { errors, storeHtmlSnippet } = useHtmlSnippets();
 
 const submit_button = ref(false);
 
 const form = reactive({
-    title: '',
-    description: '',
-    snippet: ''
+    title: "",
+    description: "",
+    snippet: ""
 });
 
 const saveHtmlSnippet = async () => {
@@ -86,5 +86,5 @@ const saveHtmlSnippet = async () => {
     formData.append("snippet", form.snippet);
     await storeHtmlSnippet(formData);
     submit_button.value = false;
-}
+};
 </script>

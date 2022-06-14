@@ -59,9 +59,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import HtmlSnippetsTableRow from './HtmlSnippetsTableRow.vue';
-import useHtmlSnippets from '../../composables/html-snippets';
+import { ref, onMounted } from "vue";
+import HtmlSnippetsTableRow from "./HtmlSnippetsTableRow.vue";
+import useHtmlSnippets from "../../composables/html-snippets";
 const { html_snippets, getHtmlSnippets } = useHtmlSnippets();
 
 const loading = ref(true);
@@ -72,7 +72,7 @@ defineProps({
         type: Boolean,
         default: false
     }
-})
+});
 
 onMounted(async () => {
     await getHtmlSnippets();
@@ -81,5 +81,5 @@ onMounted(async () => {
     if(html_snippets.value.length == 0) {
         no_resources.value = true;
     }
-})
+});
 </script>

@@ -36,7 +36,7 @@ defineProps({
         type: Boolean,
         default: false
     }
-})
+});
 
 const copyToClipboard = (element) => {
     const content = document.getElementById(element).innerText;
@@ -47,5 +47,5 @@ const copyToClipboard = (element) => {
     document.execCommand('copy');
     textArea.remove();
     alert('HTML Snippet copied to clipboard.');
-}
+};
 </script>

@@ -89,8 +89,8 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue';
-import useLinks from '../../composables/links';
+import { ref, reactive, onMounted } from "vue";
+import useLinks from "../../composables/links";
 const { errors, link, updateLink, getLink, destroyLink } = useLinks();
 
 const loading = ref(true);
@@ -106,8 +106,8 @@ const props = defineProps({
 });
 
 const form = reactive({
-    title: '',
-    link: '',
+    title: "",
+    link: "",
     open_in_new_tab: false
 });
 
@@ -132,14 +132,14 @@ const saveLink = async () => {
         "open_in_new_tab": form.open_in_new_tab ? 1 : 0
     });
     submit_button.value = false;
-}
+};
 
 const deleteLink = async () => {
     if (!window.confirm('Are you sure?')) {
-        return
+        return;
     }
     delete_button.value = true;
     await destroyLink(props.id);
     delete_button.value = false;
-}
+};
 </script>

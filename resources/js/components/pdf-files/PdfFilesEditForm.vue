@@ -72,8 +72,8 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue';
-import usePdfFiles from '../../composables/pdf-files';
+import { ref, reactive, onMounted } from "vue";
+import usePdfFiles from "../../composables/pdf-files";
 const { errors, pdf_file, updatePdfFile, getPdfFile, destroyPdfFile } = usePdfFiles();
 
 const loading = ref(true);
@@ -89,7 +89,7 @@ const props = defineProps({
 });
 
 const form = reactive({
-    title: ''
+    title: ""
 });
 
 onMounted(async () => {
@@ -109,14 +109,14 @@ const savePdfFile = async () => {
         "title": form.title
     });
     submit_button.value = false;
-}
+};
 
 const deletePdfFile = async () => {
     if (!window.confirm('Are you sure?')) {
-        return
+        return;
     }
     delete_button.value = true;
     await destroyPdfFile(props.id);
     delete_button.value = false;
-}
+};
 </script>

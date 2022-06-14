@@ -56,9 +56,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import PdfFilesTableRow from './PdfFilesTableRow.vue';
-import usePdfFiles from '../../composables/pdf-files.js';
+import { ref, onMounted } from "vue";
+import PdfFilesTableRow from "./PdfFilesTableRow.vue";
+import usePdfFiles from "../../composables/pdf-files.js";
 const { pdf_files, getPdfFiles } = usePdfFiles();
 
 const loading = ref(true);
@@ -69,7 +69,7 @@ defineProps({
         type: Boolean,
         default: false
     }
-})
+});
 
 onMounted(async () => {
     await getPdfFiles();
@@ -78,5 +78,5 @@ onMounted(async () => {
     if(pdf_files.value.length == 0) {
         no_resources.value = true;
     }
-})
+});
 </script>
