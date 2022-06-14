@@ -62,3 +62,92 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
+
+## Installation Steps
+
+1. Clone Repository to Current Working Directory
+```
+git clone https://github.com/TrivediKavit/myzenteam.git .
+```
+
+2. Copy `.env.example` file to `.env` in the root folder.
+   
+3. Open your `.env` file and change the database name (DB_DATABASE), username (DB_USERNAME) and password (DB_PASSWORD) field according to your local database setup.
+
+4. Install Composer Packages
+```
+composer install
+```
+
+5. Generate App Key
+```
+php artisan key:generate
+```
+
+6. Migrate Database
+```
+php artisan migrate
+```
+
+7. Install Node Modules and Compile Assets (Optional Step - as the compiled assets are already in the public directory)
+```
+npm install
+npm run dev
+```
+
+8. Since we are using local storage driver in this application to store uploaded files, link storage directory to public.
+```
+php artisan storage:link
+```
+
+9. Serve the application on localhost
+```
+php artisan serve
+```
+
+## Installation Steps - Lando
+
+If you are using Lando (like I did), the installation steps are slightly different.
+
+1. Clone Repository to Current Working Directory
+```
+git clone https://github.com/TrivediKavit/myzenteam.git .
+```
+   
+2. Start Lando in Current Working Directory (this step will only work if Docker Desktop is running in the background).
+```
+lando start
+```
+
+3. Copy `.env.lando.example` file to `.env` in the root folder.
+
+4. Install Composer Packages
+```
+lando composer install
+```
+
+5. Generate App Key
+```
+lando php artisan key:generate
+```
+
+6. Migrate Database
+```
+lando php artisan migrate
+```
+
+7. Install Node Modules and Compile Assets (Optional Step - as the compiled assets are already in the public directory)
+```
+npm install
+npm run dev
+```
+
+8. Since we are using local storage driver in this application to store uploaded files, link storage directory to public.
+```
+lando php artisan storage:link
+```
+
+9. If you used the .env.lando.example file without making any changes, the application will be running on `http://myzenteam.lndo.site`
+
