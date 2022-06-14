@@ -149,5 +149,5 @@ npm run dev
 lando php artisan storage:link
 ```
 
-9. If you used the .env.lando.example file without making any changes, the application will be running on `http://myzenteam.lndo.site`
+9. If you copied the `.env.lando.example` file to `.env` without making any changes, the application will be running on `http://myzenteam.lndo.site`
 
