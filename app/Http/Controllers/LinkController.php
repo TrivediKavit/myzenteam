@@ -45,6 +45,8 @@ class LinkController extends Controller
     {
         $link = Link::find($id);
 
+        $link->resources()->delete();
+
         $link->delete();
 
         return response()->noContent();

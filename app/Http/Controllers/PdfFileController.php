@@ -62,6 +62,8 @@ class PdfFileController extends Controller
     {
         $pdf_file = PdfFile::find($id);
 
+        $pdf_file->resources()->delete();
+
         $pdf_file->delete();
 
         Storage::disk('public')->delete($pdf_file->file_path);

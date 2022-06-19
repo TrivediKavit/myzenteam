@@ -45,6 +45,8 @@ class HtmlSnippetController extends Controller
     {
         $html_snippet = HtmlSnippet::find($id);
 
+        $html_snippet->resources()->delete();
+
         $html_snippet->delete();
 
         return response()->noContent();
